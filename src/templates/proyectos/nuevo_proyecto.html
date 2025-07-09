@@ -2,153 +2,360 @@
 {% block title %} Nuevo Proyecto {% endblock %}
 
 {% block proyectos_content %}
-    <section>
-        <!-- Sección: Detalles del proyecto -->
-        <h1 class="title">Detalles del proyecto</h1>
-        <!-- Formulario para los datos principales del proyecto -->
-        <form id="projectForm">
-            <div class="form-container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <!-- Nombre del Proyecto -->
-                        <div class="mb-3">
-                            <label for="projectName" class="form-label">Nombre del Proyecto</label>
-                            <input type="text" class="form-control" id="projectName" placeholder="Ingrese el nombre del proyecto" required>
-                        </div>
-                        <!-- Cliente -->
-                        <div class="mb-3">
-                            <label for="client" class="form-label">Cliente</label>
-                            <input type="text" class="form-control" id="client" placeholder="Ingrese el nombre del cliente" required>
-                        </div>
-                        <!-- Estado del Proyecto -->
-                        <div class="mb-3">
-                            <label for="status" class="form-label">Estado</label>
-                            <input type="text" class="form-control" id="status" placeholder="Ingrese el estado del proyecto" required>
-                        </div>
-                        <!-- Fecha de Inicio -->
-                        <div class="mb-3">
-                            <label for="startDate" class="form-label">Fecha de Inicio</label>
-                            <input type="date" class="form-control" id="startDate" required>
-                        </div>
-                        <!-- Fecha Fin -->
-                        <div class="mb-3">
-                            <label for="endDate" class="form-label">Fecha Fin</label>
-                            <input type="date" class="form-control" id="endDate" required>
-                        </div>
-                        <!-- Sector -->
-                        <div class="mb-3">
-                            <label for="sector" class="form-label">Sector</label>
-                            <input type="text" class="form-control" id="sector" placeholder="Ingrese el sector" required>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <!-- Costo base -->
-                        <div class="mb-3">
-                            <label for="baseCost" class="form-label">Costo base</label>
-                            <input type="number" class="form-control" id="baseCost" placeholder="Ingrese el costo base" required>
-                        </div>
-                        <!-- Tarifa (%) -->
-                        <div class="mb-3">
-                            <label for="rate" class="form-label">Tarifa (%)</label>
-                            <input type="number" class="form-control" id="rate" placeholder="Ingrese la tarifa (%)" required>
-                        </div>
-                        <!-- Monto pagado -->
-                        <div class="mb-3">
-                            <label for="amountPaid" class="form-label">Monto pagado ($)</label>
-                            <input type="number" class="form-control" id="amountPaid" placeholder="Ingrese el monto pagado" required>
-                        </div>
-                        <!-- Descripción -->
-                        <div class="mb-3">
-                            <label for="description" class="form-label">Descripción</label>
-                            <input type="text" class="form-control" id="description" placeholder="Ingrese la descripción" required>
-                        </div>
-                        <!-- Nota -->
-                        <div class="mb-3">
-                            <label for="note" class="form-label">Nota</label>
-                            <input type="text" class="form-control" id="note" placeholder="Ingrese una nota" required>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </form>
-        <!-- Sección: Agregar trámites al proyecto -->
-        <h1 class="title">Agregar trámites al proyecto</h1>
-        <!-- Formulario para agregar trámites -->
-        <form id="procedureForm">
-            <div class="form-container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <!-- Nombre del Trámite -->
-                        <div class="mb-3">
-                            <label for="procedureName" class="form-label">Nombre del Trámite</label>
-                            <input type="text" class="form-control" id="procedureName" placeholder="Ingrese el nombre del trámite" required>
-                        </div>
-                        <!-- Tipo de trámite -->
-                        <div class="mb-3">
-                            <label for="procedureType" class="form-label">Tipo de trámite</label>
-                            <input type="text" class="form-control" id="procedureType" placeholder="Ingrese el tipo de trámite" required>
-                        </div>
-                        <!-- Estado del trámite -->
-                        <div class="mb-3">
-                            <label for="procedureStatus" class="form-label">Estado</label>
-                            <input type="text" class="form-control" id="procedureStatus" placeholder="Ingrese el estado del trámite" required>
-                        </div>
-                        <!-- Fecha de Inicio del trámite -->
-                        <div class="mb-3">
-                            <label for="procedureStartDate" class="form-label">Fecha de Inicio</label>
-                            <input type="date" class="form-control" id="procedureStartDate" required>
-                        </div>
-                        <!-- Fecha Fin del trámite -->
-                        <div class="mb-3">
-                            <label for="procedureEndDate" class="form-label">Fecha Fin</label>
-                            <input type="date" class="form-control" id="procedureEndDate" required>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <!-- Costo base del trámite -->
-                        <div class="mb-3">
-                            <label for="procedureBaseCost" class="form-label">Costo base ($)</label>
-                            <input type="number" class="form-control" id="procedureBaseCost" placeholder="Ingrese el costo base" required>
-                        </div>
-                        <!-- Tarifa (%) del trámite -->
-                        <div class="mb-3">
-                            <label for="procedureRate" class="form-label">Tarifa (%)</label>
-                            <input type="number" class="form-control" id="procedureRate" placeholder="Ingrese la tarifa (%)" required>
-                        </div>
-                        <!-- Descripción del trámite -->
-                        <div class="mb-3">
-                            <label for="procedureDescription" class="form-label">Descripción</label>
-                            <input type="text" class="form-control" id="procedureDescription" placeholder="Ingrese la descripción" required>
-                        </div>
-                        <!-- Nota del trámite -->
-                        <div class="mb-3">
-                            <label for="procedureNote" class="form-label">Nota</label>
-                            <input type="text" class="form-control" id="procedureNote" placeholder="Ingrese una nota" required>
-                        </div>
-                    </div>
-                    <!-- Botón para agregar trámite -->
-                    <div class="d-flex justify-content-end gap-2">
-                        <button type="submit" class="btn btn-primary">Agregar trámite</button>
-                    </div>
-                </div>
-            </div>
-        </form>
-        <!-- Sección: Previsualización final del proyecto -->
-        <h1 class="title">Previsualización final del proyecto</h1>
+<section>
+    <h1 class="title">Detalles del proyecto</h1>
+    <form id="projectForm" method="post" autocomplete="off">
+        {% csrf_token %}
         <div class="form-container">
             <div class="row">
-            <div class="col-md-12">
-                <div class="mb-3">
-                    <label class="form-label">Información Completa del Proyecto</label>
-                    <!-- Aquí puedes mostrar un resumen dinámico del proyecto y sus trámites -->
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="projectName" class="form-label">Nombre del Proyecto</label>
+                        <input type="text" class="form-control" id="projectName" name="nombre" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="tipoProyecto" class="form-label">Tipo de Proyecto</label>
+                        <input type="text" class="form-control" id="tipoProyecto" name="tipo_proyecto" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="clientId" class="form-label">Cliente</label>
+                        <select class="form-control" id="clientId" name="cliente_id" required>
+                            <option value="">Seleccione un cliente...</option>
+                            {% for cliente in clientes %}
+                                <option value="{{ cliente.cliente_id }}">{{ cliente.nombre }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="startDate" class="form-label">Fecha de Inicio</label>
+                        <input type="date" class="form-control" id="startDate" name="fecha_inicio" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="endDate" class="form-label">Fecha Fin</label>
+                        <input type="date" class="form-control" id="endDate" name="fecha_fin">
+                    </div>
+                    <div class="mb-3">
+                        <label for="sector" class="form-label">Sector</label>
+                        <input type="text" class="form-control" id="sector" name="sector" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="baseCost" class="form-label">Costo base</label>
+                        <input type="number" step="0.01" class="form-control" id="baseCost" name="costo_base" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="ratePercent" class="form-label">Tarifa (%)</label>
+                        <input type="number" step="0.01" class="form-control" id="ratePercent" name="tarifa_porcentaje" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Descripción</label>
+                        <textarea class="form-control" id="description" name="descripcion" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="note" class="form-label">Nota</label>
+                        <textarea class="form-control" id="note" name="nota"></textarea>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <h1 class="title">Agregar trámites al proyecto</h1>
+        <div class="form-container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <label for="procedureName" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="procedureName">
+                    </div>
+                    <div class="mb-3">
+                        <label for="procedureDescription" class="form-label">Descripción</label>
+                        <input type="text" class="form-control" id="procedureDescription">
+                    </div>
+                    <div class="mb-3">
+                        <label for="procedureBaseCost" class="form-label">Costo base</label>
+                        <input type="number" step="0.01" class="form-control" id="procedureBaseCost">
+                    </div>
+                    <div class="mb-3">
+                        <label for="procedureRate" class="form-label">Tarifa (%)</label>
+                        <input type="number" step="0.01" class="form-control" id="procedureRate">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <label for="procedureDuration" class="form-label">Duración estimada (días)</label>
+                        <input type="number" class="form-control" id="procedureDuration">
+                    </div>
+                    <div class="mb-3">
+                        <label for="procedureTime" class="form-label">Tiempo de resolución (días)</label>
+                        <input type="number" class="form-control" id="procedureTime">
+                    </div>
+                    <div class="mb-3">
+                        <label for="procedureDependencia" class="form-label">Dependencia</label>
+                        <input type="text" class="form-control" id="procedureDependencia">
+                    </div>
+                    <div class="mb-3">
+                        <label for="procedureResponsable" class="form-label">Responsable</label>
+                        <input type="text" class="form-control" id="procedureResponsable">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <label for="procedureDocs" class="form-label">Documentos requeridos</label>
+                        <input type="text" class="form-control" id="procedureDocs">
+                    </div>
+                    <div class="mb-3">
+                        <label for="procedureObservaciones" class="form-label">Observaciones</label>
+                        <input type="text" class="form-control" id="procedureObservaciones">
+                    </div>
+                    <div class="mb-3">
+                        <label for="procedureStartDate" class="form-label">Fecha de inicio</label>
+                        <input type="date" class="form-control" id="procedureStartDate">
+                    </div>
+                    <div class="mb-3">
+                        <label for="procedureEndDate" class="form-label">Fecha fin</label>
+                        <input type="date" class="form-control" id="procedureEndDate">
+                    </div>
+                    <div class="mb-3 d-flex justify-content-end">
+                        <button type="button" class="btn btn-primary" onclick="agregarTramite()">Agregar trámite</button>
+                    </div>
+                </div>
+            </div>
         </div>
-        <!-- Botones para guardar o cancelar el proyecto -->
+
+        <h1 class="title">Previsualización final del proyecto</h1>
+        <div class="form-container">
+            <!-- PREVISUALIZACIÓN RESUMEN -->
+            <div id="previewProyecto" class="card-preview">
+                <!-- JS inserta aquí el resumen -->
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="label">Trámites agregados</h2>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Descripción</th>
+                                <th>Costo base</th>
+                                <th>Tarifa (%)</th>
+                                <th>Total</th>
+                                <th>Duración</th>
+                                <th>Resolución</th>
+                                <th>Dependencia</th>
+                                <th>Responsable</th>
+                                <th>Documentos</th>
+                                <th>Inicio</th>
+                                <th>Fin</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="tablaTramites">
+                            <!-- JS agrega aquí -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <input type="hidden" id="tramites_json" name="tramites_json">
+
         <div class="d-flex justify-content-end gap-2">
-            <button type="submit" class="btn btn-primary">Guardar</button>
+            <button type="button" class="btn btn-primary" id="btnGuardar">Guardar</button>
             <button type="reset" class="btn btn-secondary">Cancelar</button>
         </div>
-    </section>
+    </form>
+</section>
+
+<!-- Modal de Confirmación -->
+<div class="modal fade" id="modalConfirmacion" tabindex="-1" aria-labelledby="modalConfirmLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalConfirmLabel">Confirmar guardado</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body" id="modalConfirmTexto">
+        ¿Estás seguro de guardar el proyecto?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" id="btnConfirmarGuardar">Sí, guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+let tramites = [];
+
+function agregarTramite() {
+    let t = {
+        nombre: document.getElementById('procedureName').value,
+        descripcion: document.getElementById('procedureDescription').value,
+        costo_base: document.getElementById('procedureBaseCost').value,
+        tarifa_porcentaje: document.getElementById('procedureRate').value,
+        duracion_estimada: parseInt(document.getElementById('procedureDuration').value || 0),
+        tiempo_resolucion: parseInt(document.getElementById('procedureTime').value || 0),
+        dependencia: document.getElementById('procedureDependencia').value,
+        responsable_dependencia: document.getElementById('procedureResponsable').value,
+        estatus: "1",
+        documentos_requeridos: document.getElementById('procedureDocs').value,
+        observaciones: document.getElementById('procedureObservaciones').value,
+        fecha_inicio: document.getElementById('procedureStartDate').value,
+        fecha_fin: document.getElementById('procedureEndDate').value
+    };
+    tramites.push(t);
+    renderTramites();
+    renderPreviewProyecto();
+    // Limpia campos
+    document.getElementById('procedureName').value = '';
+    document.getElementById('procedureDescription').value = '';
+    document.getElementById('procedureBaseCost').value = '';
+    document.getElementById('procedureRate').value = '';
+    document.getElementById('procedureDuration').value = '';
+    document.getElementById('procedureTime').value = '';
+    document.getElementById('procedureDependencia').value = '';
+    document.getElementById('procedureResponsable').value = '';
+    document.getElementById('procedureDocs').value = '';
+    document.getElementById('procedureObservaciones').value = '';
+    document.getElementById('procedureStartDate').value = '';
+    document.getElementById('procedureEndDate').value = '';
+}
+
+function renderTramites() {
+    let tbody = document.getElementById('tablaTramites');
+    tbody.innerHTML = '';
+    tramites.forEach((t, idx) => {
+        const base = parseFloat(t.costo_base) || 0;
+        const porcentaje = parseFloat(t.tarifa_porcentaje) || 0;
+        const monto_tarifa = base * (porcentaje / 100);
+        tbody.innerHTML += `
+            <tr>
+                <td>${t.nombre}</td>
+                <td>${t.descripcion}</td>
+                <td>${base.toLocaleString(undefined, {minimumFractionDigits:2})}</td>
+                <td>${porcentaje}%<br><span class="text-success">$${monto_tarifa.toLocaleString(undefined, {minimumFractionDigits:2})}</span></td>
+                <td>${(base + monto_tarifa).toLocaleString(undefined, {minimumFractionDigits:2})}</td>
+                <td>${t.duracion_estimada}</td>
+                <td>${t.tiempo_resolucion}</td>
+                <td>${t.dependencia}</td>
+                <td>${t.responsable_dependencia}</td>
+                <td>${t.documentos_requeridos}</td>
+                <td>${t.fecha_inicio}</td>
+                <td>${t.fecha_fin}</td>
+                <td class="text-center">
+                    <button type="button" class="btn btn-danger btn-sm" onclick="eliminarTramite(${idx})">Eliminar</button>
+                </td>
+            </tr>
+        `;
+    });
+    document.getElementById('tramites_json').value = JSON.stringify(tramites);
+}
+
+function renderPreviewProyecto() {
+    const nombre = document.getElementById('projectName').value || '-';
+    const tipo = document.getElementById('tipoProyecto').value || '-';
+    const clienteSelect = document.getElementById('clientId');
+    const cliente = clienteSelect.options[clienteSelect.selectedIndex]?.text || '-';
+    const fecha_inicio = document.getElementById('startDate').value || '-';
+    const fecha_fin = document.getElementById('endDate').value || '-';
+    const sector = document.getElementById('sector').value || '-';
+    const descripcion = document.getElementById('description').value || '-';
+    const notas = document.getElementById('note').value || '-';
+
+    const costo_base = parseFloat(document.getElementById('baseCost').value) || 0;
+    const tarifa_percent = parseFloat(document.getElementById('ratePercent').value) || 0;
+    const utilidad_proyecto = costo_base * (tarifa_percent / 100); // solo del proyecto
+
+    const tarifa_monto = utilidad_proyecto; // para claridad
+    const iva_proy = (costo_base + tarifa_monto) * 0.16;
+    const subtotal_proy = costo_base + tarifa_monto + iva_proy;
+
+    let costo_tramites = 0, tarifas_tramites = 0, iva_tramites = 0;
+    tramites.forEach(t => {
+        const base = parseFloat(t.costo_base) || 0;
+        const porcentaje = parseFloat(t.tarifa_porcentaje) || 0;
+        const monto_tarifa = base * (porcentaje / 100);
+        costo_tramites += base;
+        tarifas_tramites += monto_tarifa;
+        iva_tramites += (base + monto_tarifa) * 0.16;
+    });
+    const subtotal_tramites = costo_tramites + tarifas_tramites + iva_tramites;
+    const gran_total = subtotal_proy + subtotal_tramites;
+
+    // Utilidad total (proyecto + trámites)
+    const utilidad_total = utilidad_proyecto + tarifas_tramites;
+
+    document.getElementById('previewProyecto').innerHTML = `
+    <div class="row">
+        <div class="col-md-3">
+            <h2 class="subtitle-preview">DATOS GENERALES</h2>
+            <ul class="list-unstyled mb-2">
+                <li class="label"><strong>Nombre:</strong> ${nombre}</li>
+                <li class="label"><strong>Tipo:</strong> ${tipo}</li>
+                <li class="label"><strong>Cliente:</strong> ${cliente}</li>
+                <li class="label"><strong>Fecha Inicio:</strong> ${fecha_inicio}</li>
+                <li class="label"><strong>Fecha Fin:</strong> ${fecha_fin}</li>
+                <li class="label"><strong>Sector:</strong> ${sector}</li>
+                <li class="label"><strong>Descripción:</strong> ${descripcion}</li>
+                <li class="label"><strong>Notas:</strong> ${notas}</li>
+            </ul>
+        </div>
+        <div class="col-md-3">
+            <h2 class="subtitle-preview">COSTOS PROYECTO</h2>
+            <ul class="list-unstyled mb-2">
+                <li class="label">Costo Base: $${costo_base.toLocaleString(undefined, {minimumFractionDigits:2})}</li>
+                <li class="label">Tarifa: $${tarifa_monto.toLocaleString(undefined, {minimumFractionDigits:2})}</li>
+                <li class="label">IVA: $${iva_proy.toLocaleString(undefined, {minimumFractionDigits:2})}</li>
+                <li class="label"><strong>Subtotal Proyecto:</strong> $${subtotal_proy.toLocaleString(undefined, {minimumFractionDigits:2})}</li>
+            </ul>
+        </div>
+        <div class="col-md-3">
+            <h2 class="subtitle-preview">COSTOS TRÁMITES</h2>
+            <ul class="list-unstyled mb-2">
+                <li class="label">Costo Base: $${costo_tramites.toLocaleString(undefined, {minimumFractionDigits:2})}</li>
+                <li class="label">Tarifas: $${tarifas_tramites.toLocaleString(undefined, {minimumFractionDigits:2})}</li>
+                <li class="label">IVA: $${iva_tramites.toLocaleString(undefined, {minimumFractionDigits:2})}</li>
+                <li class="label"><strong>Subtotal Trámites:</strong> $${subtotal_tramites.toLocaleString(undefined, {minimumFractionDigits:2})}</li>
+            </ul>
+        </div>
+        <div class="col-md-3">
+            <h2 class="subtitle-preview">TOTALES FINALES</h2>
+            <ul class="list-unstyled mb-2">
+                <li class="label"><strong>Gran Total:</strong> $${gran_total.toLocaleString(undefined, {minimumFractionDigits:2})}</li>
+                <li class="label text-success"><strong>Utilidad Total:</strong> $${utilidad_total.toLocaleString(undefined, {minimumFractionDigits:2})}</li>
+            </ul>
+        </div>
+    </div>
+    `;
+}
+
+document.querySelectorAll(
+    "#projectName, #tipoProyecto, #clientId, #startDate, #endDate, #sector, #description, #note, #baseCost, #ratePercent"
+).forEach(input => {
+    input.addEventListener("input", renderPreviewProyecto);
+});
+window.onload = function() {
+    renderTramites();
+    renderPreviewProyecto();
+};
+
+let formPendienteSubmit = false;
+document.getElementById('btnGuardar').addEventListener('click', function(){
+    let modalTexto = tramites.length === 0
+        ? "¿Estás seguro de registrar el proyecto SIN ningún trámite?"
+        : "¿Estás seguro de guardar el proyecto?";
+    document.getElementById('modalConfirmTexto').innerText = modalTexto;
+
+    let modal = new bootstrap.Modal(document.getElementById('modalConfirmacion'));
+    modal.show();
+
+    formPendienteSubmit = true;
+});
+document.getElementById('btnConfirmarGuardar').addEventListener('click', function(){
+    document.getElementById('tramites_json').value = JSON.stringify(tramites);
+    document.getElementById('projectForm').submit();
+});
+</script>
 {% endblock %}

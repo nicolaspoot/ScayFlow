@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+     'django.contrib.humanize',
     'widget_tweaks',
+    'scayflow',
 ]
 
 MIDDLEWARE = [
@@ -128,7 +130,7 @@ if ENVIRONMENT == 'development':
     STATICFILES_DIRS = [BASE_DIR / 'static']
     STATIC_ROOT = None
 else: # producción
-    STATICFILES_DIRS = []
+    STATICFILES_DIRS = [BASE_DIR / "static"]
     STATIC_ROOT = BASE_DIR / "staticfiles"
 
 STATIC_URL = '/static/'
