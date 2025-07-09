@@ -7,10 +7,10 @@
 {% block clientes_content %}
 <!-- Formulario para crear un nuevo cliente -->
 <h1 class="title">Detalles del cliente</h1>
-<form>
+<form method="post">  
+    {% csrf_token %}
     <div class="form-container">
-
-        <!-- =========================
+            <!-- =========================
              Información Básica
              ========================= -->
         <section>
@@ -20,15 +20,24 @@
                 <div class="col-md-6">
                     <div class="mb-3">
                         <label for="nombreCompleto" class="form-label">Nombre completo</label>
-                        <input type="text" class="form-control" id="nombreCompleto" name="nombreCompleto" placeholder="Ingrese el nombre completo" required>
+                        <input type="text" class="form-control" id="nombreCompleto" name="nombre" placeholder="Ingrese el nombre completo" required>
                     </div>
                     <div class="mb-3">
                         <label for="tipoCliente" class="form-label">Tipo de cliente</label>
-                        <input type="text" class="form-control" id="tipoCliente" name="tipoCliente" placeholder="Ej: Persona física, Empresa" required>
+                        <select class="form-control" id="tipoCliente" name="tipo" required>
+                            <option value="">Seleccione...</option>
+                            <option value="1">Persona Física</option>
+                            <option value="2">Persona Moral</option>
+                        </select>
                     </div>
                     <div class="mb-3">
                         <label for="rfc" class="form-label">RFC</label>
-                        <input type="text" class="form-control" id="rfc" name="rfc" placeholder="Ingrese el RFC" required>
+                        <input type="text" class="form-control" id="rfc" name="rfc"
+                            placeholder="Ej: ABCD123456XYZ"
+                            maxlength="13"
+                            pattern="[A-ZÑ&]{4}\d{6}[A-Z0-9]{3}"
+                            title="4 letras, 6 números, 3 caracteres alfanuméricos. Ej: ABCD123456XYZ"
+                            required>
                     </div>
                 </div>
 
@@ -40,7 +49,12 @@
                     </div>
                     <div class="mb-3">
                         <label for="telefono" class="form-label">Teléfono</label>
-                        <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Ej: 555-123-4567" required>
+                        <input type="tel" class="form-control" id="telefono" name="telefono"
+                            placeholder="Ej: 5551234567"
+                            minlength="10"
+                            pattern="\d{10}"
+                            title="Debe contener exactamente 10 números"
+                            required>
                     </div>
                     <div class="mb-3">
                         <label for="direccion" class="form-label">Dirección</label>
@@ -63,7 +77,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="contactoEmpresa" class="form-label">Persona de contacto</label>
-                        <input type="text" class="form-control" id="contactoEmpresa" name="contactoEmpresa" placeholder="Nombre del contacto empresarial">
+                        <input type="text" class="form-control" id="contactoEmpresa" name="persona_contacto" placeholder="Nombre del contacto empresarial">
                     </div>
                 </div>
             </div>
@@ -76,7 +90,7 @@
             <h2 class="subtitle mb-4">Información adicional</h2>
             <div class="mb-3">
                 <label for="nota" class="form-label">Nota</label>
-                <textarea class="form-control" id="nota" name="nota" rows="2" placeholder="Ingrese una nota adicional"></textarea>
+                <textarea class="form-control" id="nota" name="notas" rows="2" placeholder="Ingrese una nota adicional"></textarea>
             </div>
         </section>
 

@@ -18,6 +18,8 @@ from django.contrib import admin
 from django.urls import path
 from django.contrib.auth import views as auth_views
 from . import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -35,9 +37,16 @@ urlpatterns = [
     path('clientes', views.clientes, name='clientes'),
     path('clientes/nuevo', views.nuevo_cliente, name='nuevo_cliente'),
     path('clientes/lista', views.lista_clientes, name='lista_clientes'),
+    path('clientes/editar', views.editar_cliente, name='editar_cliente'),
 
      #Urls para tramites
     #path('tramites', views.tramites, name='tramites'),
     path('tramites/nuevo', views.nuevo_tramite, name='nuevo_tramite'),
     path('tramites/lista', views.lista_tramites, name='lista_tramites'),
+
+    #Urls para pagos
+    path('pagos/pagos', views.pagos, name='pagos'),
+    path('pagos/nuevo_pago', views.nuevo_pago, name='nuevo_pago'),
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
